@@ -1,8 +1,7 @@
 from smbus import SMBus
 
-
-addr = 0x8 # bus address
-bus = SMBus(1) # indicates /dev/ic2-1
+addr = 0x8 
+bus = SMBus(1) # /dev/ic2-1
 while True:
 
         ans = input("1 --- LED ON / 0 --- LED OFF")
@@ -10,3 +9,5 @@ while True:
                 bus.write_byte(addr, 0x1) # switch it on
         elif ans is 0:
                 bus.write_byte(addr, 0x0) # switch it off
+
+
